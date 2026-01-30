@@ -1,0 +1,334 @@
+/* Organisaton dela premiere etape */
+
+/* ici j'ai du importé un lien au choix de mon font  */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* ici le * represente le selectionneur universel c'est adire que tous les éléments de mon html aurons le meme font  */
+*{
+    /* margin 0 va me permettre de supprimer toutes les marges par defaut */
+    margin: 0;
+    /* padding 0 vas me permettre de supprimer tous les espaces par defaut */
+    padding: 0;
+    /* border-box fait que la taille donnée inclut le padding et la bordure */
+    box-sizing: border-box;
+    /* font-family sert à dire quelle police d’écriture utiliser pour le texte */
+    font-family: Playfair Display;
+    /* Rappelons que toutes ces spécifications s'appliquerons à tous les éléments à cause du sélectionneur universel */
+}
+
+/* Nous sommes toujours dans la première etape c'est a dire le header  */
+header{
+     /* L’élément est collé à l’écran, pas à la page de manière fixe il ne bouche pas quand je scroll */
+    position: fixed;
+    /* Colle l’élément en haut de l’écran  */
+    top: 0;
+    /* Le bord gauche de l’élément est collé exactement au bord gauche de l’écran */
+    left: 0;
+    /* la propriété width force déjà l’élément à occuper toute la largeur de la fenêtre ce qui rend left facultatif */
+    width: 100%;
+    /* padding: 20px 100px;, le navigateur applique 20 pixels en haut et en bas, et 100 pixels à gauche et à droite. Cela permet d’aérer le contenu et d’éviter qu’il soit collé aux bords, ce qui améliore la lisibilité et l’aspect visuel de la barre */
+    padding: 20px 10px;
+    /* La propriété background définit la couleur de fond de l’élément. Ici, la couleur rouge permet de rendre la barre visible et de distinguer clairement la zone de navigation du reste de la page. Cette propriété est surtout visuelle et n’influence pas le positionnement */
+    /* background: red; */
+    /* la propriété display: flex transforme l’élément en conteneur Flexbox. Cela signifie que tous les éléments enfants (par exemple le logo et les liens de navigation) sont alignés sur une même ligne et deviennent plus faciles à organiser */
+    display: flex;
+    /* La propriété justify-content: space-between sert à gérer l’alignement horizontal des éléments à l’intérieur de la navigation. Elle place le premier élément complètement à gauche et le dernier complètement à droite, en laissant un espace égal entre eux. C’est typiquement ce qui permet d’avoir un logo d’un côté et le menu de l’autre. */
+    justify-content: space-between;
+    /* La propriété align-items: center s’occupe de l’alignement vertical. Elle centre les éléments enfants verticalement à l’intérieur de la barre, ce qui donne un rendu équilibré et professionnel */
+    align-items: center;
+    /* la propriété z-index: 99 définit l’ordre de superposition de l’élément. Un z-index élevé garantit que la barre de navigation restera au-dessus des autres éléments de la page, notamment lorsqu’on fait défiler le contenu */
+    z-index: 99;
+}
+/* ceux qui concerne le logo */
+.logo {
+    /* Cette propriété définit la taille du texte de ton logo */
+    font-size: 2em;
+    /* Cette propriété définit la couleur du texte */
+    color: #fff;
+    /* Cette propriété empêche l’utilisateur de sélectionner le texte du logo avec la souris */
+    user-select: none;
+}
+
+/* La règle .navigation a cible tous les liens (<a>) à l’intérieur de ton élément avec la classe .navigation */
+.navigation a{
+    /* permet de déplacer légèrement le lien par rapport à sa position normale si nécessaire Obligatoire ici si on veux faire apparaître des effets sur le lien avec ::after */
+    position: relative;
+    /* Détermine la taille du texte de tous les liens */
+    font-size: 1.1em;
+    /* Cette propriété définit la couleur du texte de tous les liens qui sont dans le barre de navigation*/
+    color: #fff;
+    /* Supprime la soulignure par défaut des liens */
+    text-decoration: none;
+    /* Définit l’épaisseur du texte (gras) */
+    font-weight: 500;
+    /* Ajoute un espace à gauche du lien permettant de séparer les liens les uns des autres dans le menu */
+    margin-left: 40px;
+}
+
+/* ::after → pseudo-élément créé après le contenu du lien, invisible par défaut on ne touches pas le texte, mais on ajoutes une petite “boîte” décorative sous le lien */
+.navigation a::after{
+    /* Ici on met une chaîne vide, donc le pseudo-élément n’a pas de texte, juste une zone décorative */
+    content: '';
+    /* élément flottant, sort du flux normal se place par rapport au premier parent relative */
+    position: absolute;
+    /* Le bord gauche du pseudo-élément est collé au bord gauche du lien */
+    left: 0;
+    /* Le pseudo-élément est placé 6 pixels sous le lien */
+    bottom: -6px;
+    /* Le pseudo-élément prend toute la largeur du lien */
+    width: 100%;
+    /* La barre mesure 3 pixels de hauteur, donc fine et discrète */
+    height: 3px;
+    /* La barre est blanche, visible sur un fond foncé */
+    background: #fff;
+    /* Les coins de la barre sont arrondis, donc plus esthétiques */
+    border-radius: 5px;
+    /* Définit le point de départ de la transformation (ici l’échelle) concrètement : quand on “ouvre” la barre, elle va s’étirer de droite à gauche */
+    transform-origin: right;
+    /* La barre est réduite à 0, donc invisible */
+    transform: scale(0);
+    /* Quand la propriété transform change, l’animation se fait doucement sur 0,5 seconde */
+    transition: transform .5s;
+    /* Retenons que un pseudo-élément est un élément virtuel que tu peux créer sans l’ajouter dans ton HTML  */
+/* ::before        Crée quelque chose **avant le contenu** de l’élément  */
+/* ::after        Crée quelque chose **après le contenu** de l’élément  */
+/* ::first-letter  Style **la première lettre** d’un texte               */
+/* ::first-line    Style **la première ligne** d’un texte                */
+
+}
+
+/* :hover → lorsque la souris passe sur le lien */
+/* ::after → le pseudo-élément créé après le lien (souvent utilisé pour le soulignement animé) */
+.navigation a:hover::after{
+    /* Définit le point de départ de la transformation pour le pseudo-élément ici, la barre va “grandir” depuis la gauche vers la droite */
+    transform-origin: left;
+/* scale(1) signifie que le pseudo-élément prend sa taille normale (100%) car avant le hover, on avais scale(0) → invisible */
+/* Au hover, scale(1) → la barre devient complètement visible, tout en gardant l’effet d’animation si on n'as une transition */
+    transform: scale(1);
+}
+
+
+/* ici nous sommes sur le bouton Login se trouvant dans le barre de navigation  */
+.navigation .btnLogin-popup{
+    /* Définit la largeur du bouton à 130 pixels */
+    width: 130px;
+    /* Définit la hauteur du bouton à 50 pixels */
+    height: 50px;
+    /* Le bouton n’a pas de couleur de fond il sera donc “vide”, seul le texte et la bordure seront visibles */
+    background: transparent;
+    /* Crée une bordure blanche de 2 pixels autour du bouton */
+    border: 2px solid #fff;
+    /* Supprime le contour par défaut que le navigateur met quand le bouton est sélectionné */
+    outline: none;
+    /* Arrondit les angles du bouton de 6px */
+    border-radius: 6px;
+    /* Change le curseur en main pointant quand on survole le bouton important pour indiquer que c’est cliquable */
+    cursor: pointer;
+    /* Taille du texte légèrement plus grande que le texte normal */
+    font-size: 1.2em;
+    /* Couleur du texte du bouton → blanc */
+    color: #fff;
+    /* Poids du texte bouton → légèrement gras */
+    font-weight: 500;
+    /* Décalage du bouton vers la droite par rapport à l’élément précédent facultatif, mais pratique pour espacer le bouton des autres liens dans la nav */
+    margin-left: 40px;
+    /* La propriété transition en CSS permet de créer une animation fluide lorsque certaines propriétés changent (par exemple couleur, taille, position…) */
+    transition: .5s;
+}
+/* :hover → détecte le passage de la souris */
+.navigation .btnLogin-popup:hover{
+    /* Change le fond du bouton en une couleur bleu clair */
+    background: #c7dce3;
+    /* Change la couleur du texte du bouton l'orsqu'il est affecter ou selection */
+    color: rgb(11, 11, 11);   
+}
+
+/* Deuxième étape affichage de la photo ou image  */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(images/im1.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Organisation de la troisième etape c'est à dire du formulaire */
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba (255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: .5s ease ,height .2s ease;
+}
+
+.wrapper.active-popup{
+    transform: scale(1);
+}
+
+.wrapper.active{
+    height: 520px;
+}
+
+.wrapper .form-box{
+    width: 70%;
+    padding: 10px;
+}
+
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    background: #162939;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+
+}
+
+.form-box h2{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    border-bottom: 2px solid #162939;
+    margin: 30px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top: 38px;
+    left: 5px;
+    transform: translateY(-152%);
+    font-size: 1em;
+    color: #162939;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162939;
+    line-height: 5px;
+}
+
+.remember-forgot{
+    font-size: .9em;
+    color: black;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.remember-forgot label input{
+    accent-color: gold;
+    margin-right: 3px;
+}
+
+.remember-forgot a{
+    color: gold;
+    text-decoration: none;
+
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+.btn{
+    width: 100%;
+    height: 45px;
+    background: #162939;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+
+}
+
+.login-register{
+    font-size: .9em;
+    color: black;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a{
+    color: gold;
+    text-decoration: none;
+    font-weight: 600;
+
+}
+
+.login-register p a:hover{
+    text-decoration: underline;
+}
+
+
