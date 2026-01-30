@@ -44,7 +44,7 @@ header{
     /* Cette propriété définit la taille du texte de ton logo */
     font-size: 2em;
     /* Cette propriété définit la couleur du texte */
-    color: #fff;
+    color: sandybrown;
     /* Cette propriété empêche l’utilisateur de sélectionner le texte du logo avec la souris */
     user-select: none;
 }
@@ -63,6 +63,7 @@ header{
     font-weight: 500;
     /* Ajoute un espace à gauche du lien permettant de séparer les liens les uns des autres dans le menu */
     margin-left: 40px;
+    left: -150px;
 }
 
 /* ::after → pseudo-élément créé après le contenu du lien, invisible par défaut on ne touches pas le texte, mais on ajoutes une petite “boîte” décorative sous le lien */
@@ -332,3 +333,25 @@ body{
 }
 
 
+.btn{
+    position: relative;
+    top: 12px;
+    left: 588px;
+    width: 50px;
+    float: left;
+    height: 30px;
+   
+    
+
+}
+
+.srch{
+    position: relative;
+    left: -60px;
+    width: 200px;
+    height: 30px;
+    border-radius: 0.5em;
+    outline: none;
+    border: none;
+    
+}
