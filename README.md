@@ -1,6 +1,8 @@
 # TD — Travaux dirigés du DUT Informatique
 
-Dépôt regroupant les **travaux dirigés (TD)** et **travaux pratiques (TP)** réalisés pendant la formation en DUT Informatique. Il contient deux volets distincts : des pages web de premiers pas, et des exercices de programmation en **C++**.
+Dépôt regroupant les **travaux dirigés (TD)** et **travaux pratiques (TP)** en **développement web** réalisés pendant la formation en DUT Informatique.
+
+> Les exercices de **programmation C++** (`TD_Program_C++`) ont été déplacés dans le dépôt [`TD-et-TP-C-DUT-1`](https://github.com/PyreCore/TD-et-TP-C-DUT-1).
 
 ## Structure du dépôt
 
@@ -9,11 +11,10 @@ Dépôt regroupant les **travaux dirigés (TD)** et **travaux pratiques (TP)** r
 | `index.html` | Page web du premier TP (HTML) |
 | `css/` | Feuilles de style du premier TP (`style.css`, images d'illustration) |
 | `js/` | Scripts JavaScript du premier TP |
-| `TD_Program_C++/exo1.cpp` → `exo4.cpp` | Exercices de programmation C++ (vol. 1) |
 | `text.txt` | Fichier de notes / données d'exercice |
 | `LICENSE` | Licence du dépôt (MIT) |
 
-## 1. Partie web — HTML / CSS / JavaScript
+## Partie web — HTML / CSS / JavaScript
 
 Premier TP : une page web construite en HTML avec mise en forme CSS et un peu de JavaScript.
 
@@ -22,22 +23,13 @@ Premier TP : une page web construite en HTML avec mise en forme CSS et un peu de
 xdg-open index.html
 ```
 
-## 2. Partie programmation — C++ (`TD_Program_C++`)
+## Exercices C++
 
-Quatre exercices progressifs de calcul et de logique en C++ (gestion de prix, remises, montants…).
-
-```bash
-# Compiler et exécuter un exercice, par exemple exo1
-g++ TD_Program_C++/exo1.cpp -o TD_Program_C++/exo1
-./TD_Program_C++/exo1
-```
-
-Chaque fichier `.cpp` possède son binaire pré-compilé associé (`exo1`, `exo2`, …).
+Les exercices de programmation C++ (`TD_Program_C++/exo1.cpp` → `exo4.cpp`) sont désormais hébergés dans le dépôt **TD-et-TP-C-DUT-1**.
 
 ## Prérequis
 
 - Navigateur web pour la partie HTML/CSS/JS.
-- Compilateur C++ (`g++`) ligne de commande pour les exercices.
 
 ## Licence
 
